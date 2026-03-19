@@ -563,6 +563,9 @@ body::before {
   <video id="heroVideo" autoplay muted loop playsinline preload="auto">
     <source src="Mosque_Illustration_Video_Generation.mp4" type="video/mp4">
   </video>
+  <audio id="bgAudio" loop preload="auto">
+    <source src="audio.opus" type="audio/opus">
+  </audio>
 
   <div class="hero-overlay">
     <div class="hero-text-box">
@@ -685,11 +688,35 @@ body::before {
     setTimeout(hideLoader, 4000);
   }
 
-  // ── Mute toggle ──
+  // ── Audio playback ──
+  const audio = document.getElementById('bgAudio');
   const muteBtn = document.getElementById('muteBtn');
+  var audioPlaying = false;
+
+  function startAudio() {
+    if (!audioPlaying) {
+      audio.play().then(function() {
+        audioPlaying = true;
+        muteBtn.classList.add('is-unmuted');
+      }).catch(function() {});
+    }
+  }
+
+  // Try autoplay immediately
+  startAudio();
+
+  // Mobile browsers block autoplay — start on first tap anywhere
+  document.addEventListener('click', startAudio, { once: true });
+  document.addEventListener('touchstart', startAudio, { once: true });
+
+  // Mute toggle controls audio only
   muteBtn.addEventListener('click', function() {
-    video.muted = !video.muted;
-    muteBtn.classList.toggle('is-unmuted', !video.muted);
+    if (!audioPlaying) {
+      startAudio();
+      return;
+    }
+    audio.muted = !audio.muted;
+    muteBtn.classList.toggle('is-unmuted', !audio.muted);
   });
 
   // ── Scroll arrow ──
