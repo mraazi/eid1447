@@ -132,11 +132,11 @@ body::before {
   z-index: 2;
   background:
     linear-gradient(180deg,
-      rgba(27, 67, 50, 0.25) 0%,
-      rgba(27, 67, 50, 0.05) 30%,
-      rgba(27, 67, 50, 0.05) 50%,
-      rgba(27, 67, 50, 0.35) 75%,
-      rgba(27, 67, 50, 0.7) 100%
+      rgba(27, 67, 50, 0.3) 0%,
+      rgba(27, 67, 50, 0.15) 30%,
+      rgba(27, 67, 50, 0.1) 50%,
+      rgba(27, 67, 50, 0.3) 75%,
+      rgba(27, 67, 50, 0.6) 100%
     );
   display: flex;
   flex-direction: column;
@@ -144,87 +144,22 @@ body::before {
   justify-content: center;
 }
 
-/* Text backdrop — dark frosted panel behind all hero text */
-.hero-text-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2.5rem 2.5rem 2rem;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 16px;
-  border: 1px solid rgba(201, 168, 76, 0.2);
+/* Landing image overlay — blended on top of video */
+.hero-landing {
+  position: relative;
+  width: min(85vw, 420px);
   opacity: 0;
-  animation: fadeIn 1.2s ease 0.3s forwards;
+  animation: fadeIn 1.5s ease 0.3s forwards;
 }
 
-/* Crescent + star above the title */
-.hero-crescent {
-  font-size: 2rem;
-  color: var(--gold-bright);
-  margin-bottom: 0.4rem;
-  filter: drop-shadow(0 0 12px rgba(201, 168, 76, 0.5));
-}
-
-/* Arabic calligraphy — gold gradient, large, ornate */
-.hero-title-arabic {
-  font-family: 'Aref Ruqaa Ink', 'Amiri', serif;
-  font-size: clamp(5rem, 22vw, 10rem);
-  font-weight: 700;
-  text-align: center;
-  direction: rtl;
-  line-height: 1.25;
-  padding: 0 0.3rem;
-  /* Gold gradient fill */
-  background: linear-gradient(
-    180deg,
-    #E8D07E 0%,
-    #D4AF37 25%,
-    #C9A84C 50%,
-    #A8842C 75%,
-    #8B6914 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  /* Gold glow behind */
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.7))
-          drop-shadow(0 0 25px rgba(201, 168, 76, 0.3));
-}
-
-/* Decorative gold line below Arabic */
-.hero-arabic-line {
-  width: 120px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 0.5rem 0 0.8rem;
-}
-
-/* English title — clean, spaced, refined */
-.hero-title {
-  font-family: 'Raleway', sans-serif;
-  font-size: clamp(1rem, 4vw, 1.6rem);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.35em;
-  text-shadow:
-    0 1px 3px rgba(0,0,0,0.6);
-  line-height: 1.2;
-}
-
-.hero-subtitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(0.75rem, 2.2vw, 1rem);
-  font-weight: 400;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.75);
-  text-align: center;
-  margin-top: 1rem;
-  letter-spacing: 0.1em;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+.hero-landing img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.3),
+    0 0 60px rgba(201, 168, 76, 0.1);
 }
 
 
@@ -576,12 +511,8 @@ body::before {
   </audio>
 
   <div class="hero-overlay">
-    <div class="hero-text-box">
-      <div class="hero-crescent">☪</div>
-      <div class="hero-title-arabic">عيد مبارك</div>
-      <div class="hero-arabic-line"></div>
-      <h1 class="hero-title">Eid Mubarak</h1>
-      <p class="hero-subtitle">Taqabbalallahu minna wa minkum</p>
+    <div class="hero-landing">
+      <img src="landing.png" alt="Eid Mubarak - Taqabbalallahu minna wa minkum">
     </div>
   </div>
 
