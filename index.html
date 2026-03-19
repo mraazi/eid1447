@@ -167,30 +167,27 @@ body::before {
     0 0 60px rgba(201, 168, 76, 0.15);
 }
 
-/* Rotating gold border around the landing image */
+/* Soft pulsing gold glow around the landing image */
 .hero-landing::before {
   content: '';
   position: absolute;
-  inset: -3px;
-  border-radius: 10px;
-  background: conic-gradient(
-    from 0deg,
-    #E8D07E,
-    #D4AF37,
-    #C9A84C,
-    #A8842C,
-    #C9A84C,
-    #D4AF37,
-    #E8D07E
-  );
+  inset: -6px;
+  border-radius: 12px;
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.3), transparent 70%);
   z-index: -1;
-  animation: rotateBorder 6s linear infinite;
-  filter: blur(2px);
+  animation: pulseGlow 3s ease-in-out infinite;
+  filter: blur(10px);
 }
 
-@keyframes rotateBorder {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    inset: -6px;
+  }
+  50% {
+    opacity: 0.8;
+    inset: -14px;
+  }
 }
 
 
