@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Eid Mubarak from Razi, Suraiya, Ibrahim & Sara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400&family=Raleway:wght@300;400;500;600;700&family=Aref+Ruqaa+Ink:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Base ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green-deep: #1B4332;
+  --green-mid: #2D6A4F;
+  --green-soft: #40916C;
+  --gold: #C9A84C;
+  --gold-light: #D4AF37;
+  --gold-bright: #E8C547;
+  --cream: #FDF8F0;
+  --cream-warm: #FAF0E1;
+  --ivory: #FFFDF7;
+  --text-dark: #1A1A1A;
+  --text-warm: #3D2E1F;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Islamic geometric background pattern ── */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, var(--gold) 0px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, var(--gold) 0px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(45deg, var(--gold) 0px, transparent 1px, transparent 56.57px),
+    repeating-linear-gradient(-45deg, var(--gold) 0px, transparent 1px, transparent 56.57px);
+}
+
+/* ── Floating gold particles ── */
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(0deg) scale(0.5);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10vh) rotate(360deg) scale(1.2);
+  }
+}
+
+.particle:nth-child(1) { left: 5%; width: 3px; height: 3px; animation-duration: 18s; animation-delay: 0s; }
+.particle:nth-child(2) { left: 15%; width: 5px; height: 5px; animation-duration: 22s; animation-delay: 3s; }
+.particle:nth-child(3) { left: 25%; width: 2px; height: 2px; animation-duration: 16s; animation-delay: 7s; }
+.particle:nth-child(4) { left: 38%; width: 4px; height: 4px; animation-duration: 20s; animation-delay: 1s; }
+.particle:nth-child(5) { left: 50%; width: 3px; height: 3px; animation-duration: 24s; animation-delay: 5s; }
+.particle:nth-child(6) { left: 62%; width: 6px; height: 6px; animation-duration: 19s; animation-delay: 9s; }
+.particle:nth-child(7) { left: 73%; width: 3px; height: 3px; animation-duration: 21s; animation-delay: 2s; }
+.particle:nth-child(8) { left: 82%; width: 4px; height: 4px; animation-duration: 17s; animation-delay: 6s; }
+.particle:nth-child(9) { left: 91%; width: 2px; height: 2px; animation-duration: 23s; animation-delay: 4s; }
+.particle:nth-child(10) { left: 48%; width: 5px; height: 5px; animation-duration: 25s; animation-delay: 8s; }
+.particle:nth-child(11) { left: 8%; width: 3px; height: 3px; animation-duration: 20s; animation-delay: 11s; }
+.particle:nth-child(12) { left: 33%; width: 4px; height: 4px; animation-duration: 18s; animation-delay: 13s; }
+
+/* ── Hero Section ── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--green-deep);
+}
+
+.hero video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 2;
+  background:
+    linear-gradient(180deg,
+      rgba(27, 67, 50, 0.25) 0%,
+      rgba(27, 67, 50, 0.05) 30%,
+      rgba(27, 67, 50, 0.05) 50%,
+      rgba(27, 67, 50, 0.35) 75%,
+      rgba(27, 67, 50, 0.7) 100%
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text backdrop — dark frosted panel behind all hero text */
+.hero-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 2.5rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  opacity: 0;
+  animation: fadeIn 1.2s ease 0.3s forwards;
+}
+
+/* Crescent + star above the title */
+.hero-crescent {
+  font-size: 2rem;
+  color: var(--gold-bright);
+  margin-bottom: 0.4rem;
+  filter: drop-shadow(0 0 12px rgba(201, 168, 76, 0.5));
+}
+
+/* Arabic calligraphy — gold gradient, large, ornate */
+.hero-title-arabic {
+  font-family: 'Aref Ruqaa Ink', 'Amiri', serif;
+  font-size: clamp(5rem, 22vw, 10rem);
+  font-weight: 700;
+  text-align: center;
+  direction: rtl;
+  line-height: 1.25;
+  padding: 0 0.3rem;
+  /* Gold gradient fill */
+  background: linear-gradient(
+    180deg,
+    #E8D07E 0%,
+    #D4AF37 25%,
+    #C9A84C 50%,
+    #A8842C 75%,
+    #8B6914 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Gold glow behind */
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.7))
+          drop-shadow(0 0 25px rgba(201, 168, 76, 0.3));
+}
+
+/* Decorative gold line below Arabic */
+.hero-arabic-line {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0.5rem 0 0.8rem;
+}
+
+/* English title — clean, spaced, refined */
+.hero-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1rem, 4vw, 1.6rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  text-shadow:
+    0 1px 3px rgba(0,0,0,0.6);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.75rem, 2.2vw, 1rem);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  margin-top: 1rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+
+/* Mute toggle button */
+.mute-btn {
+  position: absolute;
+  bottom: 6rem;
+  right: 1.5rem;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  background: rgba(27, 67, 50, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s ease 2s forwards;
+}
+.mute-btn:hover {
+  background: rgba(27, 67, 50, 0.7);
+  border-color: var(--gold);
+  transform: scale(1.05);
+}
+.mute-btn svg { width: 20px; height: 20px; fill: #fff; }
+.mute-btn .unmuted { display: none; }
+.mute-btn.is-unmuted .muted { display: none; }
+.mute-btn.is-unmuted .unmuted { display: block; }
+
+/* Scroll arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  opacity: 0;
+  animation: fadeIn 1s ease 2.2s forwards, bounceDown 2s ease-in-out 2.5s infinite;
+  cursor: pointer;
+}
+.scroll-arrow svg {
+  width: 28px;
+  height: 28px;
+  stroke: rgba(255,255,255,0.7);
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ── Greeting Section ── */
+.greeting {
+  position: relative;
+  z-index: 3;
+  padding: 0 1.5rem 4rem;
+  margin-top: -8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+}
+
+.greeting-bg {
+  position: absolute;
+  top: 8rem;
+  left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, var(--green-deep) 0%, var(--cream) 15%);
+  z-index: -1;
+}
+
+/* Photo frame */
+.photo-container {
+  position: relative;
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  margin-bottom: 2.5rem;
+}
+.photo-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo-frame {
+  position: relative;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold), var(--gold-bright), var(--gold));
+  border-radius: 16px;
+  box-shadow:
+    0 8px 40px rgba(201, 168, 76, 0.2),
+    0 2px 15px rgba(0,0,0,0.08);
+}
+
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--gold-bright), transparent, var(--gold));
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(6px);
+}
+
+.photo-frame img {
+  display: block;
+  width: min(85vw, 420px);
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Corner ornaments on the photo */
+.photo-frame .corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: var(--gold-bright);
+  border-style: solid;
+  border-width: 0;
+  opacity: 0.6;
+}
+.photo-frame .corner.tl { top: -4px; left: -4px; border-top-width: 2px; border-left-width: 2px; border-radius: 4px 0 0 0; }
+.photo-frame .corner.tr { top: -4px; right: -4px; border-top-width: 2px; border-right-width: 2px; border-radius: 0 4px 0 0; }
+.photo-frame .corner.bl { bottom: -4px; left: -4px; border-bottom-width: 2px; border-left-width: 2px; border-radius: 0 0 0 4px; }
+.photo-frame .corner.br { bottom: -4px; right: -4px; border-bottom-width: 2px; border-right-width: 2px; border-radius: 0 0 4px 0; }
+
+/* Islamic geometric divider */
+.divider {
+  margin: 2rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+.divider.visible { opacity: 1; transform: translateY(0); }
+
+.divider svg { width: min(300px, 80vw); height: auto; }
+
+/* Greeting text */
+.greeting-text {
+  max-width: 540px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease 0.35s, transform 0.9s ease 0.35s;
+}
+.greeting-text.visible { opacity: 1; transform: translateY(0); }
+
+.greeting-bismillah {
+  font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  color: var(--green-deep);
+  margin-bottom: 1.5rem;
+  direction: rtl;
+  line-height: 1.6;
+}
+
+.greeting-message {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 2.8vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-warm);
+  margin-bottom: 2rem;
+  letter-spacing: 0.01em;
+}
+
+.greeting-family {
+  font-family: 'Amiri', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 700;
+  color: var(--green-deep);
+  letter-spacing: 0.03em;
+}
+
+.greeting-dua {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  color: var(--green-soft);
+  margin-top: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+/* Share button */
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  padding: 0.75rem 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.5s, transform 0.8s ease 0.5s, background 0.35s ease, color 0.35s ease;
+}
+.share-btn.visible { opacity: 1; transform: translateY(0); }
+.share-btn:hover {
+  background: var(--gold);
+  color: #fff;
+}
+.share-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+/* ── Footer ── */
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 1.5rem 2.5rem;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+}
+
+.footer-line {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 1.2rem;
+  opacity: 0.5;
+}
+
+.footer-crescent {
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  opacity: 0.7;
+}
+
+.footer-text {
+  font-family: 'Amiri', serif;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: var(--green-mid);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.footer-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  color: var(--green-soft);
+  margin-top: 0.3rem;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes bounceDown {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ── Loading screen ── */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--green-deep);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader-crescent {
+  font-size: 3rem;
+  color: var(--gold-bright);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.loader-text {
+  font-family: 'Amiri', serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 1rem;
+  letter-spacing: 0.15em;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+/* ── Responsive ── */
+@media (min-width: 768px) {
+  .greeting { padding: 6rem 2rem 5rem; }
+  .mute-btn { bottom: 7rem; right: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Loading screen -->
+<div class="loader" id="loader">
+  <div class="loader-crescent">☪</div>
+  <div class="loader-text">Eid Mubarak</div>
+</div>
+
+<!-- Floating gold particles -->
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+
+<!-- ═══════════ HERO SECTION ═══════════ -->
+<section class="hero" id="hero">
+  <video id="heroVideo" autoplay muted loop playsinline preload="auto">
+    <source src="Mosque_Illustration_Video_Generation.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay">
+    <div class="hero-text-box">
+      <div class="hero-crescent">☪</div>
+      <div class="hero-title-arabic">عيد مبارك</div>
+      <div class="hero-arabic-line"></div>
+      <h1 class="hero-title">Eid Mubarak</h1>
+      <p class="hero-subtitle">Taqabbalallahu minna wa minkum</p>
+    </div>
+  </div>
+
+  <!-- Mute / unmute toggle -->
+  <button class="mute-btn" id="muteBtn" aria-label="Toggle sound">
+    <!-- Muted icon -->
+    <svg class="muted" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15" stroke="#fff" stroke-width="2"/><line x1="17" y1="9" x2="23" y2="15" stroke="#fff" stroke-width="2"/></svg>
+    <!-- Unmuted icon -->
+    <svg class="unmuted" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14" fill="none" stroke="#fff" stroke-width="2"/><path d="M15.54 8.46a5 5 0 010 7.07" fill="none" stroke="#fff" stroke-width="2"/></svg>
+  </button>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-arrow" id="scrollArrow">
+    <svg viewBox="0 0 24 24">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════ GREETING SECTION ═══════════ -->
+<section class="greeting" id="greeting">
+  <div class="greeting-bg"></div>
+
+  <!-- Family photo -->
+  <div class="photo-container" data-animate>
+    <div class="photo-frame">
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+      <img src="Gemini_Generated_Image_3g6vyf3g6vyf3g6v.png"
+           alt="Razi, Suraiya, Ibrahim & Sara"
+           loading="lazy"
+           width="420"
+           height="auto">
+    </div>
+  </div>
+
+  <!-- Islamic geometric divider -->
+  <div class="divider" data-animate>
+    <svg viewBox="0 0 400 40" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="transparent"/>
+          <stop offset="20%" stop-color="#C9A84C"/>
+          <stop offset="50%" stop-color="#D4AF37"/>
+          <stop offset="80%" stop-color="#C9A84C"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </linearGradient>
+      </defs>
+      <!-- Center star -->
+      <polygon points="200,6 205,16 216,16 208,22 211,33 200,27 189,33 192,22 184,16 195,16" fill="#C9A84C" opacity="0.8"/>
+      <!-- Left arabesque line -->
+      <line x1="30" y1="20" x2="178" y2="20" stroke="url(#goldGrad)" stroke-width="1"/>
+      <circle cx="170" r="2.5" cy="20" fill="#C9A84C" opacity="0.5"/>
+      <circle cx="155" r="1.5" cy="20" fill="#C9A84C" opacity="0.35"/>
+      <!-- Right arabesque line -->
+      <line x1="222" y1="20" x2="370" y2="20" stroke="url(#goldGrad)" stroke-width="1"/>
+      <circle cx="230" r="2.5" cy="20" fill="#C9A84C" opacity="0.5"/>
+      <circle cx="245" r="1.5" cy="20" fill="#C9A84C" opacity="0.35"/>
+      <!-- Small diamonds -->
+      <polygon points="140,17 143,20 140,23 137,20" fill="#C9A84C" opacity="0.3"/>
+      <polygon points="260,17 263,20 260,23 257,20" fill="#C9A84C" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <!-- Greeting message -->
+  <div class="greeting-text" data-animate>
+    <div class="greeting-bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <p class="greeting-message">
+      Wishing you and your loved ones a blessed Eid filled with joy, peace, and togetherness.
+      May Allah accept our deeds and grant us His mercy.
+      May this celebration bring warmth to your hearts and barakah to your homes.
+    </p>
+    <div class="greeting-family">— Razi, Suraiya, Ibrahim & Sara</div>
+    <div class="greeting-dua">Kullu 'aam wa antum bi khayr</div>
+  </div>
+
+  <!-- Share button -->
+  <button class="share-btn" id="shareBtn" data-animate>
+    <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+    Share this greeting
+  </button>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="footer-line"></div>
+  <div class="footer-crescent">☪</div>
+  <div class="footer-text">Eid Mubarak 1447H</div>
+  <div class="footer-year">Syawal · 1447 Hijriyyah</div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // ── Loading screen ──
+  const loader = document.getElementById('loader');
+  const video = document.getElementById('heroVideo');
+
+  function hideLoader() {
+    loader.classList.add('hidden');
+  }
+
+  // Hide loader when video is ready or after timeout
+  if (video.readyState >= 3) {
+    hideLoader();
+  } else {
+    video.addEventListener('canplaythrough', hideLoader, { once: true });
+    // Fallback: hide after 4s regardless
+    setTimeout(hideLoader, 4000);
+  }
+
+  // ── Mute toggle ──
+  const muteBtn = document.getElementById('muteBtn');
+  muteBtn.addEventListener('click', function() {
+    video.muted = !video.muted;
+    muteBtn.classList.toggle('is-unmuted', !video.muted);
+  });
+
+  // ── Scroll arrow ──
+  document.getElementById('scrollArrow').addEventListener('click', function() {
+    document.getElementById('greeting').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // ── Intersection Observer for scroll animations ──
+  const animateEls = document.querySelectorAll('[data-animate]');
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  animateEls.forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // ── Web Share API ──
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', function() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Eid Mubarak from Razi, Suraiya, Ibrahim & Sara',
+        text: 'Eid Mubarak! Wishing you and your family a blessed celebration. 🌙',
+        url: window.location.href
+      }).catch(function() {});
+    } else {
+      // Fallback: copy URL to clipboard
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        shareBtn.textContent = 'Link copied!';
+        setTimeout(function() {
+          shareBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>Share this greeting';
+        }, 2000);
+      });
+    }
+  });
+
+})();
+</script>
+</body>
+</html>
