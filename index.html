@@ -167,29 +167,30 @@ body::before {
     0 0 60px rgba(201, 168, 76, 0.15);
 }
 
-/* Gold shimmer sweep across the image */
-.hero-landing::after {
+/* Rotating gold border around the landing image */
+.hero-landing::before {
   content: '';
   position: absolute;
-  inset: -2px;
+  inset: -3px;
   border-radius: 10px;
-  background: linear-gradient(
-    105deg,
-    transparent 20%,
-    rgba(232, 208, 126, 0.4) 45%,
-    rgba(212, 175, 55, 0.6) 50%,
-    rgba(232, 208, 126, 0.4) 55%,
-    transparent 80%
+  background: conic-gradient(
+    from 0deg,
+    #E8D07E,
+    #D4AF37,
+    #C9A84C,
+    #A8842C,
+    #C9A84C,
+    #D4AF37,
+    #E8D07E
   );
-  background-size: 250% 100%;
-  animation: shimmerSweep 4s ease-in-out 2s infinite;
-  pointer-events: none;
-  z-index: 1;
+  z-index: -1;
+  animation: rotateBorder 6s linear infinite;
+  filter: blur(2px);
 }
 
-@keyframes shimmerSweep {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
+@keyframes rotateBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 
