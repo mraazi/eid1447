@@ -751,17 +751,34 @@ body::before {
     observer.observe(el);
   });
 
-  // ── Web Share API ──
+  // ── Web Share API with image ──
   const shareBtn = document.getElementById('shareBtn');
+  var shareImage = null;
+
+  // Pre-fetch the image as a File object for sharing
+  fetch('Gemini_Generated_Image_3g6vyf3g6vyf3g6v.png')
+    .then(function(r) { return r.blob(); })
+    .then(function(blob) {
+      shareImage = new File([blob], 'eid-mubarak.png', { type: 'image/png' });
+    })
+    .catch(function() {});
+
   shareBtn.addEventListener('click', function() {
-    if (navigator.share) {
-      navigator.share({
-        title: 'Eid Mubarak from Razi, Suraiya, Ibrahim & Sara',
-        text: 'Eid Mubarak! Wishing you and your family a blessed celebration. 🌙',
-        url: window.location.href
-      }).catch(function() {});
+    var shareData = {
+      title: 'Eid Mubarak 1447H',
+      text: 'Eid Mubarak! Wishing you and your family a blessed Eid filled with joy, peace & togetherness. 🌙\n\nFrom Razi, Suraiya, Ibrahim & Sara\n\n' + window.location.href
+    };
+
+    // Try sharing with image first
+    if (navigator.share && shareImage && navigator.canShare && navigator.canShare({ files: [shareImage] })) {
+      shareData.files = [shareImage];
+      navigator.share(shareData).catch(function() {});
+    } else if (navigator.share) {
+      // Fallback: share without image
+      shareData.url = window.location.href;
+      navigator.share(shareData).catch(function() {});
     } else {
-      // Fallback: copy URL to clipboard
+      // Fallback: copy URL
       navigator.clipboard.writeText(window.location.href).then(function() {
         shareBtn.textContent = 'Link copied!';
         setTimeout(function() {
